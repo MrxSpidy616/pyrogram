@@ -146,7 +146,7 @@ class ChatSettings(Object):
 
     @staticmethod
     def _parse(client, chat_settings: "raw.types.PeerSettings", users) -> Optional["ChatSettings"]:
-        if not chat_settings:
+        if chat_settings is None:
             return None
 
         return ChatSettings(
